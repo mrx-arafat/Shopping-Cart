@@ -38,6 +38,10 @@ function calculateTotal() {
   const subTotal = phoneTotal + caseTotal;
 
   const tax = subTotal * 0.15;
+
+  document.getElementById("sub-total").innerText = subTotal;
+  document.getElementById("tax").innerText = tax;
+  document.getElementById("total").innerText = subTotal + tax;
 }
 
 /// update phone case price
