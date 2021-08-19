@@ -15,6 +15,29 @@ function update(product, price, isIncreasing) {
   let productPrice = document.getElementById(product + "-price");
 
   productPrice.innerText = inputBox.value * price;
+
+  // Call suBtotal
+
+  calculateTotal();
+}
+
+// taking multiple input at a same time
+
+function getInputProduct(product) {
+  const inputBox = document.getElementById(product + "-quantity");
+
+  const productQuantity = parseInt(inputBox.value);
+
+  return productQuantity;
+}
+
+function calculateTotal() {
+  const phoneTotal = getInputProduct("phone") * 1150;
+  const caseTotal = getInputProduct("case") * 50;
+
+  const subTotal = phoneTotal + caseTotal;
+
+  const tax = subTotal * 0.15;
 }
 
 /// update phone case price
